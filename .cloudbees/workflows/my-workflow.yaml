@@ -1,0 +1,26 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: My workflow
+on:
+  push:
+    branches:
+      - "main"
+  workflow_dispatch:
+jobs:
+  deploy:
+    steps:
+      - uses: cloudbees-io/register-deployed-artifact@v2
+        with:
+          labels: Prod
+          artifact-id: 2d5f00cd-803b-4c54-8da7-48c48d7adf75
+          target-environment: Production
+      - uses: cloudbees-io/register-deployed-artifact@v2
+        with:
+          labels: PREPROD
+          artifact-id: 2d5f00cd-803b-4c54-8da7-48c48d7adf75
+          target-environment: PREPROD
+      - uses: cloudbees-io/register-deployed-artifact@v2
+        with:
+          labels: test
+          artifact-id: 2d5f00cd-803b-4c54-8da7-48c48d7adf75
+          target-environment: test
