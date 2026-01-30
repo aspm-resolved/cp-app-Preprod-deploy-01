@@ -17,7 +17,7 @@ jobs:
       - uses: cloudbees-io/register-deployed-artifact@v2
         with:
           labels: PREPROD
-          artifact-id: d51964a7-81b6-489e-b0d7-2f5982bdec27
+          artifact-id: 1c6a644c-c089-4a96-92a0-5d821b7a74a5
           target-environment: PREPROD
       - uses: cloudbees-io/register-deployed-artifact@v2
         with:
